@@ -12,24 +12,12 @@ export function getFormattedDate(currentDateAndTime){
 export function Button({text, id, log, onClick, setData,setDisabled, data}){
     async function handleClick(){
 
-        if(text==='Save'){
-             const res = {
-                response:log,
-                timeStamp:data['timeStamp']
-             }
-             const result = await updateData(id,res)
-             setData(result)
-             setDisabled(true)
-
-        }
-
-        else if(text==='Delete'){
             await deleteData(id);
             const result = await fetchData()
             setData(result);
-        }
+
     }
-    if(text==='Save' || text==='Delete'){
+    if(text==='Delete'){
         return(
             <button onClick={handleClick}>{text}</button> 
         )
@@ -69,6 +57,7 @@ export default function Home(){
             timeStamp:formattedDateAndTime
         }
         writeUserData(res)
+        setText(['','',''])
 
 
     }

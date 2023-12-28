@@ -14,4 +14,12 @@
   .post-container p {
     color: #666;
   }
+
+  .colored-icon-container {
+    color: rgb(0, 183, 255); /* Set the color in your CSS file */
+    margin-left: 10px;
+  }
   
+  .heading{
+    margin-right: '10px'
+  }
